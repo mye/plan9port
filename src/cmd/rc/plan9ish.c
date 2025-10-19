@@ -19,9 +19,9 @@ char *syssigname[]={
 	"interrupt",
 	"quit",		/* can't happen */
 	"alarm",
-	"kill",
+	"kill",		/* can't happen */
 	"sys: fp: ",
-	"term",
+	"kill",
 	0
 };
 char*
