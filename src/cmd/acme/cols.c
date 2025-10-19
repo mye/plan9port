@@ -504,8 +504,15 @@ coldragwin(Column *c, Window *w, int but)
 		w->taglines = 1;
 	p = mouse->xy;
 	if(abs(p.x-op.x)<5 && abs(p.y-op.y)<5){
-		colgrow(c, w, but);
-		winmousebut(w);
+		if (but == 2) {
+			if (w->body.file->ntext > 1 || winclean(w, FALSE))
+				colclose(c, w, TRUE);
+		} else {
+			// I want the behavior for button 2 on button 3
+			if (but == 3) but = 2;
+			colgrow(c, w, but);
+			winmousebut(w);
+		}
 		return;
 	}
 	/* is it a flick to the right? */
