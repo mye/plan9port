@@ -472,7 +472,7 @@ enum
 	EVENTSIZE = 256,
 };
 
-#define Scrollwid scalesize(display, 12)
+#define Scrollwid scalesize(display, 18)
 #define Scrollgap scalesize(display, 4)
 #define Margin scalesize(display, 4)
 #define Border scalesize(display, 2)
