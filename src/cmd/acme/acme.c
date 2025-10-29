@@ -651,6 +651,8 @@ mousethread(void *v)
 					textcommit(t, TRUE);
 				if(m.buttons & 1){
 					textselect(t);
+					if (t->q0 != t->q1)
+						cut(t, t, nil, TRUE, FALSE, nil, 0);
 					if(w)
 						winsettag(w);
 					argtext = t;
